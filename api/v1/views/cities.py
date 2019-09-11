@@ -66,7 +66,8 @@ def cities_json(city_id=None):
             try:
                 single_dict = storage.get('City', city_id)
                 for key, val in req.items():
-                    if key not in ["id", "created_at", "updated_at", "state_id"]:
+                    if key not in ["id", "state_id",
+                                   "created_at", "updated_at"]:
                         setattr(single_dict, key, val)
                     else:
                         pass
