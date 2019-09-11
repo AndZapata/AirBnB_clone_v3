@@ -36,7 +36,7 @@ def states_cities(state_id):
             if 'name' not in req.keys():
                 return make_response(jsonify({'error': 'Missing name'}), 400)
             else:
-                req['state_id'] = state_id
+                req.update('state_id', state_id)
                 new_dict = City(**req)
                 new_dict.save()
                 return make_response(jsonify(new_dict.to_dict()), 201)
@@ -45,6 +45,7 @@ def states_cities(state_id):
 @app_views.route('/cities/<city_id>', methods=['GET', 'PUT', 'DELETE'],
                  strict_slashes=False)
 def cities_json(city_id=None):
+    """ comment cool """
     if request.method == 'GET':
         single_dict = storage.get('City', city_id)
         if not single_dict:
