@@ -41,8 +41,6 @@ def user_json(user_id=None):
             abort(400, 'Not a JSON')
         else:
             req = request.get_json()
-            if 'name' not in req.keys():
-                return make_response(jsonify({'error': 'Missing name'}), 400)
             if 'email' not in req.keys():
                 return make_response(jsonify({'error': 'Missing email'}), 400)
             if 'password' not in req.keys():
@@ -51,7 +49,7 @@ def user_json(user_id=None):
             else:
                 new_dict = User(**req)
                 new_dict.save()
-                return make_response(jsonify(new_dict.to_dict()), 201)
+                return jsonify(new_dict.to_dict()), 201
 
     if request.method == 'PUT' and user_id:
         if not request.is_json:
