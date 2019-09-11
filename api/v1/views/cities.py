@@ -18,12 +18,13 @@ def states_cities(state_id):
     """
     if request.method == 'GET' and state_id:
         list_of_dict = []
-        single_dict = storage.get('State', state_id)
-        if not single_dict:
+        try:
+            single_dict = storage.get('State', state_id)
+            for val in single_dict.cities:
+                list_of_dict.append(val.to_dict())
+            return jsonify(list_of_dict)
+        except:
             return make_response(jsonify({'error': 'Not found'}), 404)
-        for val in single_dict.cities:
-            list_of_dict.append(val.to_dict())
-        return jsonify(list_of_dict)
     if request.method == 'POST':
         if not request.is_json:
             abort(400, 'Not a JSON')
