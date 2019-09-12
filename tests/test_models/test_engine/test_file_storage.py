@@ -114,7 +114,6 @@ class TestFileStorage(unittest.TestCase):
             js = f.read()
         self.assertEqual(json.loads(string), json.loads(js))
 
-    @unittest.skipIf(models.storage_t == 'db', "not testing file storage")
     def test_get(self):
         """Test that save properly saves objects to file.json"""
         usr = User(email="abc@def", passsword="1234")
@@ -124,7 +123,6 @@ class TestFileStorage(unittest.TestCase):
         dict_1 = models.storage.get('User', usr.id)
         self.assertTrue(dict_1, check_id)
 
-    @unittest.skipIf(models.storage_t == 'db', "not testing file storage")
     def test_count(self):
         """Test that save properly saves objects to file.json"""
         usr = User(email="abc@def", passsword="1234")
@@ -134,7 +132,6 @@ class TestFileStorage(unittest.TestCase):
         counter = models.storage.count('User')
         self.assertTrue(number, counter)
 
-    @unittest.skipIf(models.storage_t == 'db', "not testing file storage")
     def test_all_count(self):
         """Test that save properly saves objects to file.json"""
         number = len(models.storage.all())
