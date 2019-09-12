@@ -39,6 +39,9 @@ def places_review(place_id):
             if 'user_id' not in req.keys():
                 return make_response(jsonify({'error': 'Missing user_id'}),
                                      400)
+            if 'place_id' not in req.keys():
+                return make_response(jsonify({'error': 'Missing place_id'}),
+                                     400)
             value_id = req.get('user_id')
             if not storage.get('User', value_id):
                 return make_response(jsonify({'error': 'Not found'}), 404)
