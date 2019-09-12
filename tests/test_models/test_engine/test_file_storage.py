@@ -122,9 +122,3 @@ class TestFileStorage(unittest.TestCase):
         check_id = models.storage.all("User").values()
         dict_1 = models.storage.get('User', usr.id)
         self.assertTrue(dict_1, check_id)
-
-    def test_all_count(self):
-        """Test that save properly saves objects to file.json"""
-        number = len(models.storage.all())
-        counter = models.storage.count()
-        self.assertTrue(number, counter)
