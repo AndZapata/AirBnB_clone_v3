@@ -87,6 +87,10 @@ class TestFileStorage(unittest.TestCase):
     def test_save(self):
         """Test that save properly saves objects to file.json"""
 
+
+class Test_get_and_count(unittest.TestCase):
+    """Test get and count"""
+
     def test_get(self):
         """Test that save properly saves objects to file.json"""
         usr = User(email="abc@def", passsword="1234")

@@ -114,6 +114,10 @@ class TestFileStorage(unittest.TestCase):
             js = f.read()
         self.assertEqual(json.loads(string), json.loads(js))
 
+
+class Test_get_and_count(unittest.TestCase):
+    """ Test get and count """
+
     def test_get(self):
         """Test that save properly saves objects to file.json"""
         usr = User(email="abc@def", passsword="1234")
