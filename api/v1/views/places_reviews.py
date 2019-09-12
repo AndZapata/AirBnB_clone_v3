@@ -42,6 +42,9 @@ def places_review(place_id):
             value_id = req.get('user_id')
             if not storage.get('User', value_id):
                 return make_response(jsonify({'error': 'Not found'}), 404)
+            p_id = req.get('place_id')
+            if not storage.get('Place', p_id):
+                return make_response(jsonify({'error': 'Not found'}), 404)
             if 'text' not in req.keys():
                 return make_response(jsonify({'error': 'Missing text'}), 400)
             else:
@@ -60,7 +63,7 @@ def reviews_json(review_id):
         if not single_dict:
             return make_response(jsonify({'error': 'Not found'}), 404)
         return jsonify(single_dict.to_dict())
-    if request.method == 'DELETE' and Review_id:
+    if request.method == 'DELETE' and review_id:
         try:
             single_dict = storage.get('Review', review_id).delete()
             storage.save()
