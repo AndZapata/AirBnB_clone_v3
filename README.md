@@ -73,7 +73,8 @@ status code: result of the action
 body: JSON or XML representation of resources
 
 Some important status code:
-
+200: OK
+201: created => after a POST request
 
 
 #### `models/` directory contains classes used for this project:
