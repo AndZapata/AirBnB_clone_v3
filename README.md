@@ -41,7 +41,9 @@ List of commands this console current supports:
 * `update` - Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file). 
 
 ### RESTFul API
-
+Rest API is a software architectural style for Backend.
+Rest = “REpresentational State Transfer”. API = Application Programming Interface
+Its purpose is to induce performance, scalability, simplicity, modifiability, visibility, portability, and reliability.
 
 #### `models/` directory contains classes used for this project:
 [base_model.py](/models/base_model.py) - The BaseModel class from which future classes will be derived
