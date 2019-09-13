@@ -79,6 +79,8 @@ Some important status code:
 400: bad request => the server doesn’t understand the request
 401: unauthorized => client user can’t be identified
 403: forbidden => client user is identified but not allowed to access a resource
+404: not found => resource doesn’t exist
+500: internal server error
 
 
 #### `models/` directory contains classes used for this project:
