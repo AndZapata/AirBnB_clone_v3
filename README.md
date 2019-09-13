@@ -63,7 +63,7 @@ GET /users/12: path for the user id = 12
 GET /users/12/addresses: path for listing all addresses of the user id = 12
 POST /users: path for creating a user resource
 PUT /users/12: path for updating the user id = 12
-
+DELETE /users/12/addresses/2: path for deleting the address id = 2 of the user id = 12
 
 #### `models/` directory contains classes used for this project:
 [base_model.py](/models/base_model.py) - The BaseModel class from which future classes will be derived
