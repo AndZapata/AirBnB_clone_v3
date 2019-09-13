@@ -61,6 +61,8 @@ A resource representation is accessible by a URI:
 GET /users: path for listing all user resources
 GET /users/12: path for the user id = 12
 GET /users/12/addresses: path for listing all addresses of the user id = 12
+POST /users: path for creating a user resource
+PUT /users/12: path for updating the user id = 12
 
 
 #### `models/` directory contains classes used for this project:
