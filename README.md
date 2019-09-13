@@ -44,7 +44,7 @@ List of commands this console current supports:
 Rest API is a software architectural style for Backend.
 Rest = “REpresentational State Transfer”. API = Application Programming Interface
 Its purpose is to induce performance, scalability, simplicity, modifiability, visibility, portability, and reliability.
-Rest API is Resource-based, a resource is an object and can be access by a URI. An object is “displayed”/transferred via a representation (typically JSON). 
+Rest API is Resource-based, a resource is an object and can be access by a URI. An object is “displayed”/transferred via a representation (typically JSON). HTTP methods will be actions on a resource.
 
 #### `models/` directory contains classes used for this project:
 [base_model.py](/models/base_model.py) - The BaseModel class from which future classes will be derived
