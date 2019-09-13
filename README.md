@@ -40,12 +40,13 @@ List of commands this console current supports:
 * `all` - Prints all string representation of all instances based or not on the class name. 
 * `update` - Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file). 
 
-### RESTFul API
+## RESTFul API
 Rest API is a software architectural style for Backend.
 Rest = “REpresentational State Transfer”. API = Application Programming Interface
 Its purpose is to induce performance, scalability, simplicity, modifiability, visibility, portability, and reliability.
 Rest API is Resource-based, a resource is an object and can be access by a URI. An object is “displayed”/transferred via a representation (typically JSON). HTTP methods will be actions on a resource.
-HTTP verbs
+
+###HTTP verbs
 GET:
 Read representation of a resource or a list of resources
 POST:
@@ -55,7 +56,7 @@ Update an existing resource
 DELETE:
 Remove an existing resource
 
-URIs - resource name
+###URIs - resource name
 A resource representation is accessible by a URI:
 
 GET /users: path for listing all user resources
@@ -64,6 +65,14 @@ GET /users/12/addresses: path for listing all addresses of the user id = 12
 POST /users: path for creating a user resource
 PUT /users/12: path for updating the user id = 12
 DELETE /users/12/addresses/2: path for deleting the address id = 2 of the user id = 12
+
+###HTTP Response
+In the HTTP Response, the client should verify the information of two things:
+
+status code: result of the action
+body: JSON or XML representation of resources
+
+
 
 #### `models/` directory contains classes used for this project:
 [base_model.py](/models/base_model.py) - The BaseModel class from which future classes will be derived
