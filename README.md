@@ -48,6 +48,8 @@ Rest API is Resource-based, a resource is an object and can be access by a URI. 
 HTTP verbs
 GET:
 Read representation of a resource or a list of resources
+POST:
+Create a new resource
 
 
 #### `models/` directory contains classes used for this project:
