@@ -75,6 +75,8 @@ body: JSON or XML representation of resources
 Some important status code:
 200: OK
 201: created => after a POST request
+204: no content => can be return after a DELETE request
+400: bad request => the server doesn’t understand the request
 
 
 #### `models/` directory contains classes used for this project:
