@@ -77,6 +77,8 @@ Some important status code:
 201: created => after a POST request
 204: no content => can be return after a DELETE request
 400: bad request => the server doesn’t understand the request
+401: unauthorized => client user can’t be identified
+403: forbidden => client user is identified but not allowed to access a resource
 
 
 #### `models/` directory contains classes used for this project:
