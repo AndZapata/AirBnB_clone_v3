@@ -120,7 +120,7 @@ class Test_get_and_count(unittest.TestCase):
 
     def test_get(self):
         """Test that save properly saves objects to file.json"""
-        usr = User(email="abc@def", passsword="1234")
+        usr = User(email="abc@def", password="1234")
         models.storage.new(usr)
         models.storage.save()
         check_id = models.storage.all("User").values()
@@ -129,7 +129,7 @@ class Test_get_and_count(unittest.TestCase):
 
     def test_count(self):
         """Test that save properly saves objects to file.json"""
-        usr = User(email="abc@def", passsword="1234")
+        usr = User(email="abc@def", password="1234")
         models.storage.new(usr)
         models.storage.save()
         number = len(models.storage.all("User"))

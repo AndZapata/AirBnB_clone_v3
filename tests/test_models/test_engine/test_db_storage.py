@@ -93,24 +93,24 @@ class Test_get_and_count(unittest.TestCase):
 
     def test_get(self):
         """Test that save properly saves objects to file.json"""
-        usr = User(email="abc@def", passsword="1234")
-        models.storage.new(usr)
+        amenity = Amenity(name="abcdef")
+        models.storage.new(amenity)
         models.storage.save()
-        check_id = models.storage.all("User").values()
-        dict_1 = models.storage.get('User', usr.id)
+        check_id = models.storage.all("Amenity").values()
+        dict_1 = models.storage.get('Amenity', amenity.id)
         self.assertTrue(dict_1, check_id)
 
     def test_count(self):
         """Test that save properly saves objects to file.json"""
-        usr = User(email="abc@def", passsword="1234")
-        models.storage.new(usr)
+        amenity = Amenity(name="abcdef")
+        models.storage.new(amenity)
         models.storage.save()
-        number = len(models.storage.all("User"))
-        counter = models.storage.count('User')
+        number = len(models.storage.all("Amenity"))
+        counter = models.storage.count('Amenity')
         self.assertTrue(number, counter)
 
     def test_all_count(self):
         """Test that save properly saves objects to file.json"""
         number = len(models.storage.all())
         counter = models.storage.count()
-        self.assertTrue(number, counter)
+        self.assertEqual(number, counter)
