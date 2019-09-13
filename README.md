@@ -52,6 +52,9 @@ POST:
 Create a new resource
 PUT:
 Update an existing resource
+DELETE:
+Remove an existing resource
+
 
 #### `models/` directory contains classes used for this project:
 [base_model.py](/models/base_model.py) - The BaseModel class from which future classes will be derived
