@@ -55,6 +55,11 @@ Update an existing resource
 DELETE:
 Remove an existing resource
 
+URIs - resource name
+A resource representation is accessible by a URI:
+
+GET /users: path for listing all user resources
+
 
 #### `models/` directory contains classes used for this project:
 [base_model.py](/models/base_model.py) - The BaseModel class from which future classes will be derived
