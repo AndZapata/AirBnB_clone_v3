@@ -12,6 +12,7 @@ The console is the first segment of the AirBnB project at Holberton School that 
 * [Environment](#environment)
 * [Installation](#installation)
 * [File Descriptions](#file-descriptions)
+* [RESTFul API] (#file-description)
 * [Usage](#usage)
 * [Examples of use](#examples-of-use)
 * [Bugs](#bugs)
@@ -30,7 +31,7 @@ This project is interpreted/tested on Ubuntu 14.04 LTS using python3 (version 3.
 ## File Descriptions
 [console.py](console.py) - the console contains the entry point of the command interpreter. 
 List of commands this console current supports:
-* `EOF` - exits console 
+* `EOF` - exits console
 * `quit` - exits console
 * `<emptyline>` - overwrites default emptyline method and does nothing
 * `create` - Creates a new instance of`BaseModel`, saves it (to the JSON file) and prints the id
@@ -38,6 +39,49 @@ List of commands this console current supports:
 * `show` - Prints the string representation of an instance based on the class name and id.
 * `all` - Prints all string representation of all instances based or not on the class name. 
 * `update` - Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file). 
+
+## RESTFul API
+Rest API is a software architectural style for Backend.
+Rest = “REpresentational State Transfer”. API = Application Programming Interface
+Its purpose is to induce performance, scalability, simplicity, modifiability, visibility, portability, and reliability.
+Rest API is Resource-based, a resource is an object and can be access by a URI. An object is “displayed”/transferred via a representation (typically JSON). HTTP methods will be actions on a resource.
+
+###HTTP verbs
+GET:
+Read representation of a resource or a list of resources
+POST:
+Create a new resource
+PUT:
+Update an existing resource
+DELETE:
+Remove an existing resource
+
+###URIs - resource name
+A resource representation is accessible by a URI:
+
+GET /users: path for listing all user resources
+GET /users/12: path for the user id = 12
+GET /users/12/addresses: path for listing all addresses of the user id = 12
+POST /users: path for creating a user resource
+PUT /users/12: path for updating the user id = 12
+DELETE /users/12/addresses/2: path for deleting the address id = 2 of the user id = 12
+
+###HTTP Response
+In the HTTP Response, the client should verify the information of two things:
+
+status code: result of the action
+body: JSON or XML representation of resources
+
+Some important status code:
+200: OK
+201: created => after a POST request
+204: no content => can be return after a DELETE request
+400: bad request => the server doesn’t understand the request
+401: unauthorized => client user can’t be identified
+403: forbidden => client user is identified but not allowed to access a resource
+404: not found => resource doesn’t exist
+500: internal server error
+
 
 #### `models/` directory contains classes used for this project:
 [base_model.py](/models/base_model.py) - The BaseModel class from which future classes will be derived
@@ -151,12 +195,17 @@ EOF  all  create  destroy  help  quit  show  update
 ```
 
 ## Bugs
-No known bugs at this time. 
+No known bugs at this time.
 
 ## Authors
 Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
 
 Second part of Airbnb: Joann Vuong
+
+Third Part:
+Paula Andrea Zapata - [Github] https://github.com/AndZapata
+Maria Alejandra Coy - [Github] https://github.com/macoyulloa
+
 ## License
-Public Domain. No copy write protection. 
+Public Domain. No copy write protection.
